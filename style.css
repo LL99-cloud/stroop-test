@@ -1,0 +1,130 @@
+/* 1. 引入 Google 字體 (思源黑體)，讓字體更現代化 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
+
+/* 2. 整個網頁的背景設定：現代感漸層 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    /* 換成低飽和暖橘色 (晨曦蜜桃漸層) */
+    background: linear-gradient(135deg, #f4cbbd 0%, #fbe8e1 100%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 3. 共用的卡片樣式：毛玻璃與柔和陰影 */
+#start-screen, #game-container {
+    background: rgba(255, 255, 255, 0.85); /* 微微半透明的白底 */
+    backdrop-filter: blur(10px); /* 讓背景產生毛玻璃模糊效果 */
+    padding: 50px 60px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    width: 450px;
+    /* 綁定我們下面寫好的 fadeIn 進場動畫 */
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* 定義進場動畫：從下面微微浮現並變清晰 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 開始畫面專屬設計 --- */
+#start-screen h1 {
+    font-size: 46px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#start-screen p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    background: #f8f9fa; /* 給文字加上淡灰底色框 */
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 6px solid #4CAF50; /* 左側加上綠色重點線 */
+}
+
+/* 開始按鈕 (立體動感設計) */
+#start-btn {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    padding: 16px 50px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50px; /* 圓潤的藥丸形狀 */
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3); /* 綠色發光陰影 */
+}
+
+#start-btn:hover {
+    transform: translateY(-3px); /* 滑鼠移過時微微上浮 */
+    box-shadow: 0 12px 20px rgba(76, 175, 80, 0.4);
+}
+
+#start-btn:active {
+    transform: translateY(2px); /* 點擊時會有「壓下去」的真實物理感 */
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+/* --- 遊戲畫面專屬設計 --- */
+#timer-display {
+    color: #7f8c8d;
+    font-size: 22px;
+    margin-top: 0;
+    font-weight: bold;
+    background: #ecf0f1;
+    display: inline-block;
+    padding: 8px 25px;
+    border-radius: 20px; /* 像個小徽章 */
+}
+
+#word-display {
+    font-size: 90px;
+    margin: 40px 0;
+    letter-spacing: 8px; /* 讓字元之間分開一點 */
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.15); /* 讓重點文字更有立體感 */
+    font-weight: 900;
+}
+
+#options-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 12px; /* 控制四個選項按鈕之間的間隔距離 */
+}
+
+/* 選項按鈕 */
+#options-container button {
+    flex: 1; /* 讓四個按鈕自動平分卡片寬度 */
+    font-size: 22px;
+    font-weight: bold;
+    padding: 18px 0;
+    cursor: pointer;
+    border: 2px solid transparent; 
+    border-radius: 15px;
+    background-color: white;
+    color: #2c3e50;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+#options-container button:hover {
+    background-color: #f1f2f6;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+#options-container button:active {
+    transform: translateY(1px); /* 點擊選項時的壓下感 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}

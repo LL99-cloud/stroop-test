@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Stroop Test 認知測驗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="start-screen">
+        <h1>Stroop Test</h1>
+        <p>
+            <strong>遊戲說明：</strong><br>
+            請忽略文字的「字義」<br>
+            盡速選出文字的「顏色」！<br>
+            共 10 題，準備好就開始吧！
+        </p>
+        <button id="start-btn">開始測驗</button>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <h2 id="timer-display">時間: 0 秒</h2>
+        <h1 id="word-display">準備開始</h1>
+        <div id="options-container">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
