@@ -16,14 +16,17 @@ body {
 
 /* 3. 共用的卡片樣式：毛玻璃與柔和陰影 */
 #start-screen, #game-container {
-    background: rgba(255, 255, 255, 0.85); /* 微微半透明的白底 */
-    backdrop-filter: blur(10px); /* 讓背景產生毛玻璃模糊效果 */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
     padding: 50px 60px;
     border-radius: 24px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
-    width: 450px;
-    /* 綁定我們下面寫好的 fadeIn 進場動畫 */
+    
+    /* 【修改這裡】讓卡片有彈性 */
+    width: 90%;          /* 在手機上，讓卡片佔據螢幕的 90% 寬度 */
+    max-width: 450px;    /* 但在電腦的大螢幕上，最大不要超過 450px */
+    
     animation: fadeIn 0.6s ease-out;
 }
 
